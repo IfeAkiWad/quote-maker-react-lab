@@ -22,7 +22,7 @@ class QuoteForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    
+    this.props.addQuote(quote)
   }
   
 
@@ -79,5 +79,13 @@ class QuoteForm extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addQuote: quote => {
+      dispatch(addQuote(quote))
+    }
+  }
+}
+
 //add arguments to connect as needed
-export default connect()(QuoteForm);
+export default connect(null, mapDispatchToProps)(QuoteForm);
