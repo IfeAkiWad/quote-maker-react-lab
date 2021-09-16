@@ -5,7 +5,7 @@ import { removeQuote, upvoteQuote, downvoteQuote } from '../actions/quotes'; //m
 
 class Quotes extends Component {
   render() {
-    const { quotes, removeQuote, upvoteQuote, downvoteQuote} = this.props //pass down as callback props to the QuoteCard component.
+    const { quote, removeQuote, upvoteQuote, downvoteQuote} = this.props //pass down as callback props to the QuoteCard component.
 
     return (
       <div>
@@ -22,7 +22,7 @@ class Quotes extends Component {
 
                 Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
                */}
-              {quotes.map( quote => <QuoteCard key={quote.id} quotes={quotes} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote}/>)}
+              {quotes.map( quote => <QuoteCard key={quote.id} quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote}/>)}
             </div>
           </div>
         </div>
