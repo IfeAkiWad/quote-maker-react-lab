@@ -15,6 +15,10 @@ class QuoteForm extends Component {
 
   handleOnChange = event => {
     // Handle Updating Component State
+    this.setState({
+      content: event.target.value,
+      author: event.target.value
+    })
   }
 
   handleOnSubmit = event => {
@@ -36,7 +40,9 @@ class QuoteForm extends Component {
                     <label htmlFor="content" className="col-md-4 control-label">Quote</label>
                     <div className="col-md-5">
                       <textarea
+                        name="content"
                         className="form-control"
+                        onChange={this.handleOnChange}
                         value={this.state.content}
                       />
                     </div>
@@ -45,8 +51,10 @@ class QuoteForm extends Component {
                     <label htmlFor="author" className="col-md-4 control-label">Author</label>
                     <div className="col-md-5">
                       <input
+                        name="author"
                         className="form-control"
                         type="text"
+                        onChange={this.handleOnChange}
                         value={this.state.author}
                       />
                     </div>
